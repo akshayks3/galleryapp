@@ -1,0 +1,105 @@
+@import "./mixins";
+
+.logo{
+  width:15rem;
+  @include respond(big-desktop){
+    @include centre()
+  }
+  @include respond(md-desktop){
+    @include centre()
+  }
+  @include respond(tab-land){
+    @include centre()
+  }
+  @include respond(tab-port){
+    position: absolute;
+    left: 5%;
+    top:50%;
+    transform: translateY(-50%);
+  }
+
+}
+
+
+
+.md-padding{
+  padding-right: 5rem;
+  padding-left: 5rem;
+
+  @include respond(tab-port){
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.md-paddingright{
+  padding-right: 5rem;
+  @include respond(tab-port){
+    padding-right: 2rem;
+  }
+}
+
+.md-paddingleft{
+  padding-left: 5rem;
+  @include respond(tab-port){
+    padding-left: 2rem;
+  }
+}
+
+.sm-margin--top{
+  margin-top: 1rem;
+}
+
+.md-margin--top{
+  margin-top: 2rem;
+}
+
+.lg-margin--top{
+  margin-top: 5rem;
+}
+
+.sm-margin--bottom{
+  margin-top: 1rem;
+}
+
+.md-margin--bottom{
+  margin-top: 2rem;
+}
+
+.lg-margin--botttom{
+  margin-top: 5rem;
+}
+
+.centre{
+  text-align: center;
+}
+
+.color-white{
+  color: white;
+}
+
+.color-black{
+  color: #000;
+}
+
+.color-darkblue{
+  color: #032942,
+}
+
+.color-lightblue{
+  color: #01578A
+}
+
+
+
+.pointer{
+  cursor: pointer;
+}
+
+.error{
+  color: #f72f2f;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+

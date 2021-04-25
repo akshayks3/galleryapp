@@ -1,0 +1,151 @@
+@import "../../styles/common";
+@import "../../styles/button";
+@import "../../styles/mixins";
+@import "../../styles/animations";
+
+.intro{
+  background-image:linear-gradient(
+    to right bottom,
+    rgba(rgba(31, 30, 30, 0.055), 0.8),
+    rgba(#000, 0.6)
+  ),
+  url(../../assets/back-images/micky.jpg);
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+  height: 100vh;
+
+}
+
+.business{
+  min-height: 100vh;
+  position: relative;
+  background-color: #eeeccc
+}
+
+
+.mission{
+
+  @include centre()
+}
+
+.texts{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.leadership{
+  min-height: 50vh;
+  position: relative;
+  background-color: #fff;
+}
+
+.flex-4{
+  display: flex;
+  padding: 5rem;
+  @include respond(tab-port){
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .cols1{
+    flex: 0 1 25%;
+    padding: 2rem;
+    position: relative;
+    margin-top: 2rem;
+    @include respond(tab-port){
+      flex: 0 1 100%;
+      padding: 2rem;
+    }
+  }
+  .cols2{
+    flex: 0 1 25%;
+    padding: 2rem;
+    position: relative;
+    margin-top: 2rem;
+    @include respond(tab-port){
+      flex: 0 1 100%;
+      padding: 2rem;
+    }
+  }
+  .cols3{
+    flex: 0 1 25%;
+    padding: 2rem;
+    position: relative;
+    margin-top: 2rem;
+    @include respond(tab-port){
+      flex: 0 1 100%;
+      padding: 2rem;
+    }
+  }
+  .cols4{
+    flex: 0 1 25%;
+    padding: 2rem;
+    position: relative;
+    margin-top: 2rem;
+    @include respond(tab-port){
+      flex: 0 1 100%;
+      padding: 2rem;
+    }
+  }
+}
+
+.circle{
+  position: absolute;
+  background-color: #fff;
+  height:15rem;
+  width:15rem;
+  top:-20%;
+  left:50%;
+  transform: translateX(-50%);
+  border:2px solid teal;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+}
+
+.circular--square {
+  border-radius: 50%;
+  height:15rem;
+  width: 15rem;
+}
+
+
+.feature-box {
+  background-color: rgba(#ffff, 0.8);
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(#000, 0.15);
+  transition: transform 0.3s;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
+  &__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    color: transparent;
+    @include respond(tab-port) {
+      margin-bottom: 0;
+    }
+  }
+  // &:hover {
+  //   transform: translateY(-1.5rem) scale(1.03);
+  // }
+}
+
+.name{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:black;
+  display: block;
+}
+.desc{
+  font-weight: 1rem;
+  font-weight: 400;
+  display: block;
+  color: #000;
+}

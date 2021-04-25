@@ -1,0 +1,35 @@
+@import "./mixins";
+
+.intro-heading{
+  font-size: 6rem;
+  font-weight: 400;
+  color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+}
+
+.sub-heading{
+  font-size: 2rem;
+  color:rgb(209, 206, 206);
+  width:60%;
+  text-align: justify;
+  @include respond(tab-port){
+    width:90%;
+  }
+}
+
+.headings{
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 5px solid;
+  border-image:   linear-gradient(to right, rgba(140, 186, 201, 0.986) 25%, teal 75%) 5;
+}
+
+
+.sm-text{
+  font-size: 1.2rem;
+  font-weight: 500;
+
+}

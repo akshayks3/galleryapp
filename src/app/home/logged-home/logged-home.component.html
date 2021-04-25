@@ -1,0 +1,82 @@
+<div class="intro">
+  <app-header></app-header>
+  <div class="intro-content">
+    <h2 class="intro-heading">Mortal Combact</h2>
+  </div>
+  <div class="sub-heading md-padding">This explosive cinematic adventure inspired by the blockbuster video game
+    franchise pits Earth’s greatest champions against enemies from Outworld in a high-stakes battle for the universe. In
+    theaters and streaming exclusively on xyz.com through May 23 at no extra cost to subscribers.</div>
+  <div class="md-padding md-margin--top" style="padding-bottom: 5rem;">
+    <button class="login-button" (click)="explore()">Explore Gallery</button>
+  </div>
+
+</div>
+
+<div class="best">
+  <h2 class="headings borderbotrecent color-darkblue">
+    Best Picture Nominees
+  </h2>
+  <div class="md-margin--top">
+    <div>
+      <div class="flex-4">
+        <div class="cols1" *ngFor="let i of movieList">
+          <div class="flex2">
+            <div class="img">
+              <img [src]="i.src" style="height:20rem;width:100%" />
+            </div>
+            <div class="box">
+              <div class="card1" style="text-align: start;padding-left: 1rem;">
+                <a class="moviename">{{i.name}}</a>
+                <a class="genre">{{i.genre}}</a>
+              </div>
+              <div class="more">
+                <a class="more--text" (click)="explore()">See More ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="cols2">
+          <div class="flex2">
+            <div class="img">
+              <img src="../../../assets/images/jojo.jpg" style="height:20rem;width:100%" />
+            </div>
+            <div class="box">
+              <div class="card1" style="text-align: start;padding-left: 1rem;">
+                <a class="moviename">Jojo</a>
+                <a class="genre">Comedy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cols3">
+          <div class="flex2">
+            <div class="img">
+              <img src="../../../assets/images/phantom.jpg" style="height:20rem;width:100%" />
+            </div>
+            <div class="box">
+              <div class="card1" style="text-align: start;padding-left: 1rem;">
+                <a class="moviename">Phantom Thread</a>
+                <a class="genre">Drama</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cols4">
+          <div class="flex2">
+            <div class="img">
+              <img src="../../../assets/images/rocky.jpg" style="height:20rem;width:100%" />
+            </div>
+            <div class="box">
+              <div class="card1" style="text-align: start;padding-left: 1rem;">
+                <a class="moviename">Rocky</a>
+                <a class="genre">Action</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

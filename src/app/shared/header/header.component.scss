@@ -1,0 +1,231 @@
+@import "../../../styles/mixins";
+@import "../../../styles/animations";
+@import "../../../styles/common";
+@import "../../../styles/button";
+
+.header{
+  height: 10vh;
+  background-color: white;
+  display: flex;
+//   box-shadow: 0px 1px 5px 2px rgba(224,219,219,0.75);
+// -webkit-box-shadow: 0px 1px 5px 2px rgba(224,219,219,0.75);
+// -moz-box-shadow: 0px 1px 5px 2px rgba(224,219,219,0.75);
+  align-content: flex-end;
+  position: fixed;
+  width:100%;
+  z-index:10;
+
+  -webkit-animation: conditionalOpen 1s normal forwards ease-in-out;
+  -moz-animation: conditionalOpen 1s normal forwards ease-in-out;
+       animation: conditionalOpen 1s normal forwards ease-in-out;
+-webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+       transform-origin: 50% 0%;
+
+
+  .cols1{
+    flex: 0 1 20%;
+    position: relative;
+
+    @include respond(tab-port){
+      flex: 0 1 50%;
+      position: relative;
+    }
+  }
+  .cols2{
+    flex: 0 1 80%;
+    align-self: center;
+    padding: 0 5rem;
+
+      @include respond(tab-port){
+        flex: 0 1 50%;
+        position: relative;
+      }
+    }
+}
+
+.menu-button{
+  text-align: end;
+  @include respond(big-desktop){
+    display: none;
+  }
+  @include respond(md-desktop){
+    display: none;
+  }
+  @include respond(tab-land){
+    display: none;
+  }
+  @include respond(tab-port){
+    display: block;
+  }
+}
+
+.nav{
+  text-align: end;
+  @include respond(tab-port){
+    display: none;
+  }
+
+}
+
+.navelem{
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: #1BB6E8;
+    &:hover{
+    color:#02588a;
+    }
+
+    &--small{
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      color: #1BB6E8;
+    }
+  }
+
+  .navelemselected{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: orange;
+    border-bottom: 2px solid #02588a;
+      &:hover{
+      color:#02588a;
+      }
+
+      &--small{
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        color: orange;
+      }
+  }
+
+
+
+.navbox{
+  position: absolute;
+  top:10vh;
+  min-height: 20rem;
+  width: 100%;
+  background-color: #fff;
+  z-index: 20;
+  box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  -webkit-animation: conditionalOpen 1s normal forwards ease-in-out;
+  -moz-animation: conditionalOpen 1s normal forwards ease-in-out;
+       animation: conditionalOpen 1s normal forwards ease-in-out;
+-webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+       transform-origin: 50% 0%;
+       @include respond(big-desktop){
+        display: none;
+      }
+      @include respond(md-desktop){
+        display: none;
+      }
+      @include respond(tab-land){
+        display: none;
+      }
+      @include respond(tab-port){
+        display: block;
+      }
+}
+
+
+.navbox--transparent{
+  position: absolute;
+  top:10vh;
+  min-height: 20rem;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.911);
+  z-index: 20;
+  box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  -webkit-animation: conditionalOpen 1s normal forwards ease-in-out;
+  -moz-animation: conditionalOpen 1s normal forwards ease-in-out;
+       animation: conditionalOpen 1s normal forwards ease-in-out;
+-webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+       transform-origin: 50% 0%;
+
+       @include respond(big-desktop){
+        display: none;
+      }
+      @include respond(md-desktop){
+        display: none;
+      }
+      @include respond(tab-land){
+        display: none;
+      }
+      @include respond(tab-port){
+        display: block;
+      }
+}
+
+.top-bar{
+  display: flex;
+  height: 10vh;
+  .cols1{
+    flex: 0 1 20%;
+    position: relative;
+    @include respond(tab-port){
+      flex: 0 1 50%;
+      position: relative;
+    }
+  }
+  .cols2{
+    flex: 0 1 80%;
+    align-self: center;
+    padding: 0 5rem;
+
+      @include respond(tab-port){
+        flex: 0 1 50%;
+        position: relative;
+      }
+  }
+}
+
+
+.box{
+  border: 1.5px solid #034f72;
+  padding: 0rem 1rem;
+  text-transform: capitalize;
+  color:orange;
+  display: inline;
+  position: relative;
+  &:hover{
+    color:orange;
+    background-color: #034f72;
+  }
+}
+
+.logout{
+  position: absolute;
+  background-color: #fff;
+  width:10rem;
+
+  z-index: 5000;
+  top:110%;
+  left:0%;
+  color:#1BB6E8;;
+  box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(27, 27, 27, 0.75);
+  padding: 0.5rem 0.5rem;
+}
+
+
+

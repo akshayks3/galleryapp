@@ -1,0 +1,90 @@
+<!-- <app-header *ngIf="scrolltopbool"></app-header> -->
+
+<div class="intro">
+  <app-header></app-header>
+  <div class="intro-content">
+    <h2 class="intro-heading">We Make</h2>
+    <h2 class="intro-heading borderbot">Digital Beautiful
+      <div></div>
+    </h2>
+  </div>
+  <div class="sub-heading md-padding">These are the
+    words that we
+    live by in everything we do. Every
+    story we tell, every
+    brand we build, and every interaction we create must not only look beautiful, but has to feel and function
+    beutifully too. Crafted to perfection.</div>
+  <div class="md-padding md-margin--top" style="padding-bottom: 5rem;">
+    <button class="login-button" (click)="openModal('login-modal')">Log In</button>
+  </div>
+
+</div>
+<div class="recent">
+  <h2 class="headings borderbotrecent color-darkblue">Recent News
+
+  </h2>
+</div>
+<div class="section-stories">
+  <div class="bg-video">
+    <video class="bg-video__content" autoplay muted loop>
+      <source src="../../assets/videos/video.mp4" type="video/mp4" />
+      <source src="../../assets/videos/video.webm" type="video/webm" />
+      Your browser is not supported!
+    </video>
+  </div>
+  <div class="flex1">
+    <div class="cols1">
+      <div class="feature-box">
+        <img src="../../assets/images/launchpad.jpg" style="max-width:100%;">
+        <div style="text-align: center;">
+          April 04, 2021
+        </div>
+        <div style="padding:2rem">
+          LAUNCHPAD Brings a New Generation of Storytellers.
+        </div>
+      </div>
+      <div class="feature-box lg-margin--top">
+        <img src="../../assets/images/avengers.jpg" style="max-width:100%;">
+        <div style="text-align: center;">
+          April 12, 2021
+        </div>
+        <div style="padding:2rem">
+          Avengers Campus Opening on June 4, 2021
+        </div>
+      </div>
+    </div>
+    <div class="cols2">
+      <div class="feature-box">
+        <img src="../../assets/images/shangchi.jpg" style="max-width:100%;">
+        <div style="text-align: center;">
+          April 19, 2021
+        </div>
+        <div style="padding:2rem">
+          Teaser Trailer Debuts for Marvel Studios’ ‘Shang-Chi and The Legend of The Ten Rings’
+        </div>
+      </div>
+    </div>
+    <div class="cols3">
+      <div class="feature-box">
+        <img src="../../assets/images/cruella.jpg" style="max-width:100%;">
+        <div style="text-align: center;">
+          April 20, 2021
+        </div>
+        <div style="padding:2rem">
+          New Trailer Released for Disney’s ‘Cruella’
+        </div>
+      </div>
+      <div class="feature-box lg-margin--top">
+        <img src="../../assets/images/loki.jpg" style="max-width:100%;">
+        <div style="text-align: center;">
+          April 08, 2021
+        </div>
+        <div style="padding:2rem">
+          New Trailer for Marvel Studios’ Original Series ‘Loki’
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+<app-login></app-login>

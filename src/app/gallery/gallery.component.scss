@@ -1,0 +1,96 @@
+@import "../../styles/common";
+@import "../../styles/button";
+@import "../../styles/mixins";
+@import "../../styles/animations";
+
+.intro{
+  background-image:linear-gradient(
+    to right bottom,
+    rgba(rgba(31, 30, 30, 0.055), 0.8),
+    rgba(#000000, 0.6)
+  ),
+  url(../../assets/back-images/human.jpg);
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+
+  @include respond(big-desktop){
+    height: 30vh;
+  }
+  @include respond(md-desktop){
+    height: 30vh;
+  }
+  @include respond(tab-land){
+    height: auto
+  }
+  @include respond(tab-port){
+    height: auto
+  }
+
+}
+
+.flex-4{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem;
+  @include respond(tab-port){
+    flex-direction: column;
+    padding:5rem 15rem;
+  }
+  @include respond(phone){
+    flex-direction: column;
+    padding:2rem;
+  }
+  .cols1{
+    flex: 0 1 25%;
+    position: relative;
+    margin-top: 2rem;
+    @include respond(tab-port){
+      flex: 0 1 100%;
+    }
+    &:hover{
+      transform: translateY(-1.5rem) scale(1.03);
+    }
+  }
+}
+
+.info{
+  position: absolute;
+  top:60%;
+  left:6%;
+}
+
+.img{
+  height:20rem;
+  width:95%;
+  border-radius: 5px;
+
+  @include respond(tab-port){
+    width:100%;
+  }
+}
+
+.name{
+  font-size: 2.3rem;
+  color:#fff;
+  font-weight: 500;
+  display: block;
+}
+
+.img_container{
+  height: 80vh;
+  position: relative;
+  @include respond(tab-port){
+    height:60vh;
+  }
+}
+
+.pop_img{
+  width:100%;
+  object-fit: contain;
+  @include centre();
+  max-height: 80vh;
+  @include respond(tab-port){
+    max-height:60vh;
+  }
+}

@@ -1,0 +1,46 @@
+@import "../../../styles/common";
+
+.footer{
+
+  background-image:linear-gradient(
+    to bottom,
+    #ffff,
+    #f0ebf0,
+    rgb(214, 226, 235),
+    rgb(212, 227, 233),
+    rgba(rgb(202, 216, 231), 0.8)
+  );
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.flex4{
+  display:flex;
+  flex-direction: row;
+
+  .cols1{
+    flex: 0 1 25%;
+  }
+  .cols2{
+    flex: 0 1 25%;
+  }
+  .cols3{
+    flex: 0 1 25%;
+  }
+  .cols4{
+    flex: 0 1 25%;
+  }
+}
+
+.footerlist{
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.logo-foot{
+  width:20rem;height:8rem
+}

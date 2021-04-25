@@ -1,0 +1,93 @@
+@import "../../../styles/mixins";
+@import "../../../styles/button";
+@import "../../../styles/typography";
+@import "../../../styles/common";
+
+.flex-2{
+  display: flex;
+  padding: 0 0;
+  .cols1{
+    flex: 0 1 50%;
+    @include respond(phone){
+      flex: 0 0 0%;
+      display: none;
+    }
+  }
+  .cols2{
+    flex: 0 1 50%;
+    position: relative;
+    height: 50rem;
+    @include respond(phone){
+      flex: 0 1 100%;
+      height:40rem;
+    }
+  }
+}
+
+.signuptemp{
+  background-image: url(../../../assets/back-images/cinema.jpg);
+  height: 100%;
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.content{
+  @include centre();
+}
+
+.loginput{
+  width: 30rem;
+  border: 3px solid #032942;
+  border-radius: 10px;
+  height: 4rem;
+  outline: none;
+  margin-top: 2rem;
+  display: block;
+  @include respond(phone){
+    width:20rem;
+  }
+
+  &:focus{
+    border: 3px solid rgb(7, 146, 156);
+  }
+}
+
+
+.placeholder{
+  position: absolute;
+  top: 6rem;
+  bottom: 0;
+  height: 2.4rem;
+  font-size: 2.5rem;
+  left: 28rem;
+  margin: auto;
+  @include respond(phone){
+    left: 17rem;
+  }
+}
+
+@supports (-moz-appearance:none) {
+  .placeholder{
+    position: absolute;
+    top: 4rem;
+    bottom: 0;
+    height: 2.4rem;
+    font-size: 2.5rem;
+    left: 28rem;
+    margin: auto;
+    @include respond(phone){
+      left: 17rem;
+    }
+  }
+}
+
+.hoverchange{
+
+    &:hover{
+      color: #01578A
+    }
+
+
+}

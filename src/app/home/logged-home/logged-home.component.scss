@@ -1,0 +1,126 @@
+@import "../../../styles/common";
+@import "../../../styles/button";
+@import "../../../styles/mixins";
+@import "../../../styles/animations";
+
+.intro{
+  background-image:linear-gradient(
+    to right bottom,
+    rgba(rgba(31, 30, 30, 0.055), 0.8),
+    rgba(#000, 0.6)
+  ),
+  url(../../../assets/back-images/mortal.jpg);
+
+  @include respond(big-desktop){
+    height: 100vh;
+  }
+  @include respond(md-desktop){
+    height: 100vh;
+  }
+  @include respond(tab-land){
+    height: auto
+  }
+  @include respond(tab-port){
+    height: auto
+  }
+
+}
+
+.intro-content{
+  padding:10rem 5rem 0rem 5rem ;
+  position: relative;
+  @include respond(tab-port){
+    padding: 5rem 2rem 0rem 2rem;
+  }
+}
+
+.borderbot{
+  position: relative;
+  &::after{
+    content: "";
+    background: #1BB6E8;
+    position: absolute;
+    top:120%;
+    bottom: 0;
+    left: 0;
+    height: 10%;
+    width: 18%;
+  }
+}
+
+.best{
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+
+
+.flex2{
+  display: flex;
+  flex-direction: row;
+  padding: 0rem 0rem;
+  .img{
+    flex: 0 1 50%;
+    height: 20rem;
+  }
+  .box{
+    flex: 0 1 50%;
+    height:20rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position:relative
+  }
+}
+
+.card1{
+  background-color: white;
+  height: 19rem;
+  box-shadow: 0px 1px 4px 3px rgba(211,209,209,0.75);
+  -webkit-box-shadow: 0px 1px 4px 3px rgba(211,209,209,0.75);
+  -moz-box-shadow: 0px 1px 4px 3px rgba(211,209,209,0.75);
+}
+
+
+.flex-4{
+  display: flex;
+  padding: 5rem;
+  flex-wrap: wrap;
+  @include respond(tab-port){
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .cols1{
+    flex: 0 1 25%;
+    position: relative;
+    margin-top: 2rem;
+    @include respond(tab-port){
+      flex: 0 1 100%;
+    }
+  }
+}
+
+.moviename{
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  color:black;
+}
+
+.genre{
+  font-size: 1.4rem;
+  font-weight: 400;
+  display: block;
+}
+
+.more{
+  position: absolute;
+  top:80%;
+  left:5%;
+
+  &--text{
+    font-size: 1.6rem;
+    color:#1cb5c9;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}

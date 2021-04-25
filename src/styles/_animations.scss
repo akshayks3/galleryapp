@@ -1,0 +1,27 @@
+
+    // Opening and closing motion for conditional fieldset
+    @-webkit-keyframes conditionalOpen {
+      from { transform: scaleY(0) }
+      to { transform: scaleY(1) }
+  }
+  @-moz-keyframes conditionalOpen {
+      from { transform: scaleY(0) }
+      to { transform: scaleY(1) }
+  }
+  @keyframes conditionalOpen {
+      from { transform: scaleY(0) }
+      to { transform: scaleY(1) }
+  }
+
+  @-webkit-keyframes conditionalClose {
+      from { transform: scaleY(1) }
+      to { transform: scaleY(0) }
+  }
+  @-moz-keyframes conditionalClose {
+      from { transform: scaleY(1) }
+      to { transform: scaleY(0) }
+  }
+  @keyframes conditionalClose {
+      from { transform: scaleY(1) }
+      to { transform: scaleY(0) }
+  }

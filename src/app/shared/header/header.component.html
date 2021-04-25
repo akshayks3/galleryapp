@@ -1,0 +1,130 @@
+<div class="header" *ngIf="scrolltopbool">
+  <div class="cols1">
+    <img src="../../../assets/logos/xyz_logo.png" class="logo" />
+  </div>
+  <div class="cols2">
+    <div class="nav" *ngIf="!loggedstate">
+      <a [class.navelem]="currentroute != 'home'" [class.navelemselected]="currentroute == 'home'"
+        (click)="navigateTo('home')">Home</a>
+      <a [class.navelem]="currentroute != 'about'" [class.navelemselected]="currentroute == 'about'"
+        (click)="navigateTo('about')">About</a>
+      <a class="navelem" (click)="openModal('login-modal')">Log In</a>
+    </div>
+    <div class="nav" *ngIf="loggedstate">
+      <a [class.navelem]="currentroute != 'home'" [class.navelemselected]="currentroute == 'home'"
+        (click)="navigateTo('home')">Home</a>
+      <a [class.navelem]="currentroute != 'about'" [class.navelemselected]="currentroute == 'about'"
+        (click)="navigateTo('about')">About</a>
+      <a [class.navelem]="currentroute != 'gallery'" [class.navelemselected]="currentroute == 'gallery'"
+        (click)="navigateTo('gallery')">Gallery</a>
+      <span class="navelem box" (click)="showLog()">
+        <fa-icon [icon]="['far','user']" [styles]="{'margin-right':'0.5rem'}">
+        </fa-icon>
+        {{userdetails.username}}
+        <fa-icon [icon]="['fas','chevron-down']" [styles]="{'margin-left':'0.5rem'}" *ngIf="!logdown">
+        </fa-icon>
+        <fa-icon [icon]="['fas','chevron-up']" [styles]="{'margin-left':'0.5rem'}" *ngIf="logdown">
+        </fa-icon>
+        <div class="logout" *ngIf="logdown">
+          <div class="centre" (click)="logout()">
+            <fa-icon [icon]="['fas','sign-out-alt']" [styles]="{'margin-right':'1rem'}">
+            </fa-icon>Logout
+          </div>
+        </div>
+      </span>
+    </div>
+    <div class="menu-button">
+      <!-- <h6>Hello</h6> -->
+      <fa-icon [icon]="['fas','bars']"
+        [styles]="{'min-height':'20px', 'min-width':'20px','cursor':'pointer','color':'#1BB6E8'}" (click)="showItems()">
+      </fa-icon>
+    </div>
+  </div>
+  <div [class.navbox]="itembool" *ngIf="itembool">
+    <ul style="list-style: none;text-align: end;padding:1rem 4rem 1rem 4rem;" *ngIf="!loggedstate">
+      <li [class.navelem--small]="currentroute != 'home'" [class.navelemselected--small]="currentroute == 'home'"
+        (click)="navigateTo('home')">Home</li>
+      <li [class.navelem--small]="currentroute != 'about'" [class.navelemselected--small]="currentroute == 'about'"
+        (click)="navigateTo('about')">About</li>
+      <li class="navelem--small" (click)="openModal('login-modal')">Log In</li>
+    </ul>
+    <ul style="list-style: none;text-align: end;padding:1rem 4rem 1rem 4rem;" *ngIf="loggedstate">
+      <li [class.navelem--small]="currentroute != 'home'" [class.navelemselected--small]="currentroute == 'home'"
+        (click)="navigateTo('home')">Home</li>
+      <li [class.navelem--small]="currentroute != 'about'" [class.navelemselected--small]="currentroute == 'about'"
+        (click)="navigateTo('about')">About</li>
+      <li [class.navelem--small]="currentroute != 'gallery'" [class.navelemselected--small]="currentroute == 'gallery'"
+        (click)="navigateTo('gallery')">Gellery</li>
+      <li class="navelem--small" (click)="logout()">Log Out</li>
+      <li class="navelem--small box" style="text-transform: capitalize;">
+        <fa-icon [icon]="['far','user']" [styles]="{'margin-right':'0.5rem'}">
+        </fa-icon>
+        {{userdetails.username}}
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="top-bar" *ngIf="!scrolltopbool">
+  <div class="cols1">
+    <img src="../../assets/logos/xyz_logo.png" class="logo" />
+  </div>
+  <div class="cols2">
+    <div class="nav" *ngIf="!loggedstate">
+      <a [class.navelem]="currentroute != 'home'" [class.navelemselected]="currentroute == 'home'"
+        (click)="navigateTo('home')">Home</a>
+      <a [class.navelem]="currentroute != 'about'" [class.navelemselected]="currentroute == 'about'"
+        (click)="navigateTo('about')">About</a>
+      <a class="navelem" (click)="openModal('login-modal')">Log In</a>
+    </div>
+    <div class="nav" *ngIf="loggedstate">
+      <a [class.navelem]="currentroute != 'home'" [class.navelemselected]="currentroute == 'home'"
+        (click)="navigateTo('home')">Home</a>
+      <a [class.navelem]="currentroute != 'about'" [class.navelemselected]="currentroute == 'about'"
+        (click)="navigateTo('about')">About</a>
+      <a [class.navelem]="currentroute != 'gallery'" [class.navelemselected]="currentroute == 'gallery'"
+        (click)="navigateTo('gallery')">Gallery</a>
+      <span class="navelem box" (click)="showLog()">
+        <fa-icon [icon]="['far','user']" [styles]="{'margin-right':'0.5rem'}">
+        </fa-icon>{{userdetails.username}}
+        <fa-icon [icon]="['fas','chevron-down']" [styles]="{'margin-left':'0.5rem'}" *ngIf="!logdown">
+        </fa-icon>
+        <fa-icon [icon]="['fas','chevron-up']" [styles]="{'margin-left':'0.5rem'}" *ngIf="logdown">
+        </fa-icon>
+        <div class="logout" *ngIf="logdown">
+          <div class="centre" (click)="logout()">
+            <fa-icon [icon]="['fas','sign-out-alt']" [styles]="{'margin-right':'1rem'}">
+            </fa-icon>Logout
+          </div>
+        </div>
+      </span>
+    </div>
+    <div class="menu-button">
+      <fa-icon [icon]="['fas','bars']"
+        [styles]="{'min-height':'30px', 'min-width':'30px','cursor':'pointer','color':'#1BB6E8'}" (click)="showItems()">
+      </fa-icon>
+    </div>
+  </div>
+  <div [class.navbox--transparent]="itembool" *ngIf="itembool">
+    <ul style="list-style: none;text-align: end;padding:1rem 4rem 1rem 4rem;" *ngIf="!loggedstate">
+      <li [class.navelem--small]="currentroute != 'home'" [class.navelemselected--small]="currentroute == 'home'"
+        (click)="navigateTo('home')">Home</li>
+      <li [class.navelem--small]="currentroute != 'about'" [class.navelemselected--small]="currentroute == 'about'"
+        (click)="navigateTo('about')">About</li>
+      <li class="navelem--small" (click)="openModal('login-modal')">Log In</li>
+    </ul>
+    <ul style="list-style: none;text-align: end;padding:1rem 4rem 1rem 4rem;" *ngIf="loggedstate">
+      <li [class.navelem--small]="currentroute != 'home'" [class.navelemselected--small]="currentroute == 'home'"
+        (click)="navigateTo('home')">Home</li>
+      <li [class.navelem--small]="currentroute != 'about'" [class.navelemselected--small]="currentroute == 'about'"
+        (click)="navigateTo('about')">About</li>
+      <li [class.navelem--small]="currentroute != 'gallery'" [class.navelemselected--small]="currentroute == 'gallery'"
+        (click)="navigateTo('gallery')">Gellery</li>
+      <li class="navelem--small" (click)="logout()">Log Out</li>
+      <li class="navelem--small box" style="text-transform: capitalize;">
+        <fa-icon [icon]="['far','user']" [styles]="{'margin-right':'0.5rem'}">
+        </fa-icon>
+        {{userdetails.username}}
+      </li>
+    </ul>
+  </div>
+</div>

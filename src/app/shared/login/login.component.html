@@ -1,0 +1,85 @@
+<jw-modal id="login-modal">
+  <div style="position: relative;">
+    <span class="close-button color-darkblue">
+      <fa-icon [icon]="['fas','times']" [styles]="{'min-height':'15px', 'min-width':'15px','cursor':'pointer'}"
+        (click)="closeModal('login-modal')">
+      </fa-icon>
+    </span>
+    <div class="flex-2">
+      <div class="cols1">
+        <div class="signuptemp">
+          <div class="content">
+            <h2 class="headings" style="color: white;" *ngIf="state === 'login'">Create Account</h2>
+            <h2 class="headings" style="color: white;" *ngIf="state === 'signup'">Have Account ?</h2>
+            <div class="centre md-margin--top">
+              <button class="signup color-white" (click)="switchTo('signup')" *ngIf="state === 'login'">Sign Up</button>
+              <button class="signup color-white" (click)="switchTo('login')" *ngIf="state === 'signup'">Log In</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cols2">
+        <div class="content" *ngIf="state === 'login'">
+          <form [formGroup]="loginForm">
+            <h2 class="headings color-black">Log In</h2>
+            <input type="text" class="loginput" placeholder="User ID" formControlName="email">
+            <span style="position: relative;">
+              <input [type]="passwordType" class="loginput" placeholder="Password" formControlName="password">
+              <span class="placeholder">
+                <fa-icon [icon]="['fas','eye']" (click)="changePasswordtype('text')"
+                  [styles]="{'height':'20px', 'width':'20px','cursor':'pointer','color':'#000'}"
+                  *ngIf="passwordType == 'password'">
+                </fa-icon>
+                <fa-icon [icon]="['fas','eye-slash']" (click)="changePasswordtype('password')"
+                  [styles]="{'height':'20px', 'width':'20px','cursor':'pointer','color':'#000'}"
+                  *ngIf="passwordType == 'text'">
+                </fa-icon>
+              </span>
+            </span>
+            <div class="centre md-margin--top">
+              <button class="submitbutton" (click)="login()">Log In</button>
+              <!-- <a (click)="yoyo('value')">Login</a> -->
+            </div>
+            <div class="centre sm-margin--top" *ngIf="loginerror">
+              <a class="error">Enter a valid User ID / Password</a>
+            </div>
+            <div class="centre sm-text md-margin--top">
+              <a class="pointer hoverchange" (click)="switchTo('signup')">Sign Up</a> | <a
+                class="pointer hoverchange">Lost Your Password ?</a>
+            </div>
+
+          </form>
+        </div>
+        <div class="content" *ngIf="state === 'signup'">
+          <form [formGroup]="signupForm">
+            <h2 class="headings color-black">Sign Up</h2>
+            <input type="text" class="loginput" placeholder="User ID" formControlName="email">
+            <input type="text" class="loginput" placeholder="Username" formControlName="username">
+            <span style="position: relative;">
+              <input [type]="passwordType" class="loginput" placeholder="Password" formControlName="password">
+              <span class="placeholder">
+                <fa-icon [icon]="['fas','eye']" (click)="changePasswordtype('text')"
+                  [styles]="{'height':'20px', 'width':'20px','cursor':'pointer','color':'#000'}"
+                  *ngIf="passwordType == 'password'">
+                </fa-icon>
+                <fa-icon [icon]="['fas','eye-slash']" (click)="changePasswordtype('password')"
+                  [styles]="{'height':'20px', 'width':'20px','cursor':'pointer','color':'#000'}"
+                  *ngIf="passwordType == 'text'">
+                </fa-icon>
+              </span>
+            </span>
+            <div class="centre md-margin--top"><button class="submitbutton" (click)="signup()">Sign Up</button></div>
+            <div class="centre sm-margin--top" *ngIf="signuperror.length > 0">
+              <div *ngFor="let i of signuperror" class="error">{{i}}</div>
+            </div>
+            <div class="centre sm-text md-margin--top">
+              <a class="pointer hoverchange" (click)="switchTo('login')">Log In</a> | <a
+                class="pointer hoverchange">Lost
+                Your Password ?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</jw-modal>

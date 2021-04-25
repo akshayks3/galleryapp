@@ -1,0 +1,95 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:     Phone
+600 - 900px:   Tablet portrait
+900 - 1200px:  Tablet landscape
+1200 - 1800px: Normal Desktop
+1800px + :     Big Desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      //900px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+
+  @if $breakpoint == md-desktop{
+    @media(max-width: 81em){
+      // 1300
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 81.26em) {
+      //>1300px
+      @content;
+    }
+  }
+}
+
+@mixin respondheight($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-height: 400px ) {
+      //640px
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media (max-height: 640px) {
+      //640px
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media (max-height: 750px) {
+      //750px
+      @content;
+    }
+  }
+
+  @if $breakpoint == xl {
+    @media(max-height: 950px){
+      // 900
+      @content;
+    }
+  }
+  @if $breakpoint == tab {
+    @media(min-height: 951px){
+      // 900
+      @content;
+    }
+  }
+}
+
+@mixin centre {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}

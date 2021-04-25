@@ -1,0 +1,31 @@
+<div class="intro">
+  <app-header></app-header>
+  <div class="centre">
+    <h2 class="headings color-white">Explore Gallery</h2>
+  </div>
+
+</div>
+<div style="padding: 0rem 5rem;background-color: #141414;">
+  <div class="flex-4">
+    <div class="cols1" *ngFor="let i of movieList" (click)="openModal('img-modal', i.src)">
+      <img [src]="i.src" class="img">
+      <div class="info">
+        <a class="name">{{i.name}}</a>
+        <button class="play">Play</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+<jw-modal id="img-modal">
+  <div style="position: relative;">
+    <span class="close-button color-darkblue">
+      <fa-icon [icon]="['fas','times']" [styles]="{'min-height':'15px', 'min-width':'15px','cursor':'pointer'}"
+        (click)="closeimgModal('img-modal')">
+      </fa-icon>
+    </span>
+    <div class="img_container" *ngIf="selected != '' || selected != null">
+      <img [src]="selected" class="pop_img">
+    </div>
+  </div>
+</jw-modal>
