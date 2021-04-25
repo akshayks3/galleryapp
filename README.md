@@ -11,7 +11,7 @@ ngrx used for state management.
 
 # External libraries
 Font awesome angular library.
-ngrx
+ngrx library for state management
 
 ## Development server
 
