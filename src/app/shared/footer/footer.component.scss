@@ -2,16 +2,17 @@
 
 .footer{
 
-  background-image:linear-gradient(
-    to bottom,
-    #ffff,
-    #f0ebf0,
-    rgb(214, 226, 235),
-    rgb(212, 227, 233),
-    rgba(rgb(202, 216, 231), 0.8)
-  );
+  // background-image:linear-gradient(
+  //   to bottom,
+  //   #ffff,
+  //   #f0ebf0,
+  //   rgb(214, 226, 235),
+  //   rgb(212, 227, 233),
+  //   rgba(rgb(202, 216, 231), 0.8)
+  // );
+  background-color: #0C111B;
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .flex4{
@@ -43,4 +44,30 @@
 
 .logo-foot{
   width:20rem;height:8rem
+}
+
+.copyright{
+
+  font-size:1.2rem;
+  font-weight: 500;
+}
+
+.flex-2{
+  display: flex;
+  padding: 5rem 5rem;
+  @include respond(phone){
+    flex-direction: column;
+  }
+  .cols1{
+    flex: 0 1 50%;
+    @include respond(phone){
+      flex: 0 1 100%
+    }
+  }
+  .cols2{
+    flex: 0 50%;
+    @include respond(phone){
+      flex: 0 1 100%
+    }
+  }
 }
